@@ -53,11 +53,26 @@
     and international diplomacy. The diversity of the 50 states, in every aspect, makes the United States a complex and dynamic federation, offering a wide array 
     of experiences, opportunities, and challenges. </p>
 
+<script> // JavaScript code for dynamic components // (You can place this in an external script.js file) const userInputForm = document.getElementById("userInputForm"); const dateAndTime = document.getElementById("dateAndTime"); const quoteOfTheDay = document.getElementById("quoteOfTheDay");
+    // Form submission handler
+    userInputForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const userName = document.getElementById("userName").value;
+        alert(`Hello, ${userName}!`);
+    });
 
-const quotes = [
-        "The paragraph above has false information.",
-        "Don't believe what the information above says.",
-        "None of the information above is factual.",
+    // Update date and time
+    function updateDateTime() {
+        const now = new Date();
+        dateAndTime.innerText = now.toLocaleString();
+    }
+    setInterval(updateDateTime, 1000); // Update every second
+
+    // Change the quote of the day (sample quotes)
+    const quotes = [
+        "The universe is full of stars waiting to be discovered.",
+        "Look up at the stars and not down at your feet.",
+        "Stars can't shine without darkness.",
     ];
     function updateQuoteOfTheDay() {
         const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -65,6 +80,8 @@ const quotes = [
     }
     updateQuoteOfTheDay(); // Initial quote
     setInterval(updateQuoteOfTheDay, 10000); // Change every 10 seconds
+</script>
+
 
     
 <button id="startButton">Start Game</button>
