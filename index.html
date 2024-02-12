@@ -27,7 +27,7 @@
 </head>
 <body>
     <header>USA Comprehension Test</header>
-  <p> IMPORTANT: To start the best biography game ever,  Please scroll to the bottom of the page and click the start game button</p>
+  <p> IMPORTANT: To start the USA Comprehension Test,  Please scroll to the bottom of the page and click the start game button. After you complete the test please click on the grading/rubric tab</p>
  
     <p>The United States of America, a federal republic, is composed of 50 states that span across North America, each contributing 
     its unique heritage, culture, and geography to the rich tapestry of the nation. These states vary widely in size, population, 
@@ -117,6 +117,23 @@ myButton.addEventListener("click", function() {
     startGame();
 });
 
+const quotes = [
+        "The paragraph above has false information.",
+        "Don't believe what the information above says.",
+        "None of the information above is factual.",
+    ];
+    function updateQuoteOfTheDay() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteOfTheDay.innerText = `"${quotes[randomIndex]}"`;
+    }
+    updateQuoteOfTheDay(); // Initial quote
+    setInterval(updateQuoteOfTheDay, 10000); // Change every 10 seconds
+
+
+
+
+
+    
 
 
     
