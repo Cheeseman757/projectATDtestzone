@@ -116,7 +116,36 @@ function startGame() {
 myButton.addEventListener("click", function() {
     startGame();
 });
+        const userInputForm = document.getElementById("userInputForm");
+        const dateAndTime = document.getElementById("dateAndTime");
+        const quoteOfTheDay = document.getElementById("quoteOfTheDay");
 
+        // Form submission handler
+        userInputForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const userName = document.getElementById("userName").value;
+            alert(`Hello, ${userName}!`);
+        });
+
+        // Update date and time
+        function updateDateTime() {
+            const now = new Date();
+            dateAndTime.innerText = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000); // Update every second
+
+        // Change the quote of the day (sample quotes)
+        const quotes = [
+            "The universe is full of stars waiting to be discovered.",
+            "Look up at the stars and not down at your feet.",
+            "Stars can't shine without darkness.",
+        ];
+        function updateQuoteOfTheDay() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteOfTheDay.innerText = `"${quotes[randomIndex]}"`;
+        }
+        updateQuoteOfTheDay(); // Initial quote
+        setInterval(updateQuoteOfTheDay, 10000); // Change every 10 seconds
 
  
 </script>
