@@ -57,7 +57,10 @@
     
 <script>
 'use strict';
-
+    
+// button below
+const myButton = document.getElementById('startButton');
+    
 function askYesNoQuestion(question) {
     let answer;
     do {
@@ -86,7 +89,7 @@ function startGame() {
         'Is New York City recognized as a major agricultural center? (yes/no)',
         'Are the 50 states similar in size, population, and climate? (yes/no)',
         'Is Vermont known for its arid desert landscape? (yes/no)',
-        'Are Alaska's natural resources and wilderness insignificant to its economy? (yes/no)',
+        'Are Alaska natural resources and wilderness insignificant to its economy? (yes/no)',
         'Is the U.S. Constitution ratified by the original 13 colonies before 1776? (yes/no)',
         'Does the federal system limit states from having any control over local matters? (yes/no)',
         'Is New York City irrelevant in finance, culture, and international diplomacy? (yes/no)',
@@ -110,8 +113,13 @@ function startGame() {
     alert(`${userName}, your final score is ${score} out of ${questions.length}.`);
 }
 
-document.getElementById('startButton').onclick = startGame;
-        
+myButton.addEventListener("click", function() {
+    startGame();
+});
+
+
+
+    
 </script>
 </body>
 </html>
