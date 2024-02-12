@@ -117,26 +117,8 @@ myButton.addEventListener("click", function() {
     startGame();
 });
 
-const quotes = [
-        "The paragraph above has false information.",
-        "Don't believe what the information above says.",
-        "None of the information above is factual.",
-    ];
-    function updateQuoteOfTheDay() {
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        quoteOfTheDay.innerText = `"${quotes[randomIndex]}"`;
-    }
-    updateQuoteOfTheDay(); // Initial quote
-    setInterval(updateQuoteOfTheDay, 10000); // Change every 10 seconds
 
-
-
-
-
-    
-
-
-    
+ 
 </script>
 </body>
 </html>
