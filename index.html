@@ -68,45 +68,9 @@
               return answer === 'y' || answer === 'yes';
           }
 
-          function askNumericQuestion(question, correctanswer) {
-              let attempts = 5;
-              let guess;
-              do {
-                  guess = parseInt(prompt(question));
-                  if (guess === 21) {
-                      alert("Correct!");
-                      return true;
-                  } else if (guess < 21) {
-                      alert("Too low.");
-                  } else {
-                      alert("Too high.");
-                  }
-                  attempts--;
-              } while (attempts > 0);
-
-              alert(`Sorry, the correct answer was ${21}.`);
-              return false;
-          }
-
-          function askMultipleChoiceQuestion(question, correctAnswers) {
-              let attempts = 5;
-              let guess;
-              do {
-                  guess = prompt(question).toLowerCase();
-                  if (correctAnswers.includes('Madagascar', 'Japan', 'Mongolia', 'Norway','Finland', 'Australia', 'Brazil', 'Egypt', 'Thailand', 'Spain')) { 
-                      alert("Correct!");
-                      return true;
-                  }
-                  attempts--;
-              } while (attempts > 0);
-
-              alert(`The correct answers were: ${correctAnswers.join(', ')}.`);
-              return false;
-          }
-
           function startGame() {
               let userName = prompt('What is your name?');
-              alert(`Welcome to my About Me game, ${userName}!`);
+              alert(`Welcome to the USA Comprehension Test, ${userName}!`);
 
               let questions = [
                   'Does Alaska have the largest area among the 50 states? (yes/no)',
@@ -146,16 +110,9 @@
                   }
               }
 
-              if (askNumericQuestion("Guess my favorite number between 1 and 100", 21)) {
-                  score++;
-              }
+            
 
-              let possibleAnswers = ['Madagascar', 'Japan', 'Mongolia', 'Norway','Finland', 'Australia', 'Brazil', 'Egypt', 'Thailand', 'Spain']; 
-              if (askMultipleChoiceQuestion("Where is one of my top ten places to visit? (Hint: See list on webpage)", possibleAnswers)) {
-                  score++;
-              }
-
-              alert(`${userName}, your final score is ${score} out of 7.`);
+              alert(`${userName}, your final score is ${score} out of 20.`);
           }
 
           document.getElementById('startButton').onclick = startGame;
