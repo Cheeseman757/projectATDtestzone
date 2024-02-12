@@ -1,38 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="dateAndTime"></div> <!-- Display date and time -->
-    <div id="quoteOfTheDay"></div> <!-- Display quote of the day -->
-    <button id="startButton">Start Game</button>
-
-    header {
-            color: white;
-            background-color: cadetblue; 
-            text-align: center;
-        }
-        body {
-            font-family: Arial, sans-serif;
-       
-        }
-      #startButton {
-          display: block;
-          margin: 20px auto;
-          padding: 10px 20px;
-          background-color: orangered;
-          color: white;
-          border: none;
-          cursor: pointer;
-          text-align: center;
-      }
-      #startButton:hover {
-          background-color: green;
-      }
-    </style>
+    
 </head>
 <body>
     <header>USA Comprehension Test</header>
@@ -66,42 +35,6 @@
     
 <script>
 'use strict';
-
-function updateDateTime() {
-        const now = new Date();
-        const dateAndTimeElement = document.getElementById('dateAndTime'); // Ensure this element exists
-        if (dateAndTimeElement) {
-            dateAndTimeElement.innerText = now.toLocaleString();
-        }
-    }
-    setInterval(updateDateTime, 1000); // Update every second
-
-    // Change the quote of the day (sample quotes)
-    const quotes = [
-        "The universe is full of stars waiting to be discovered.",
-        "Look up at the stars and not down at your feet.",
-        "Stars can't shine without darkness.",
-    ];
-    function updateQuoteOfTheDay() {
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        const quoteOfTheDayElement = document.getElementById('quoteOfTheDay'); // Ensure this element exists
-        if (quoteOfTheDayElement) {
-            quoteOfTheDayElement.innerText = `"${quotes[randomIndex]}"`;
-        }
-    }
-    updateQuoteOfTheDay(); // Initial quote
-    setInterval(updateQuoteOfTheDay, 10000); // Change every 10 se
-
-// button below
-const myButton = document.getElementById('startButton');
-    
-function askYesNoQuestion(question) {
-    let answer;
-    do {
-        answer = prompt(question).toLowerCase();
-    } while (answer !== 'y' && answer !== 'yes' && answer !== 'n' && answer !== 'no');
-    return answer === 'y' || answer === 'yes';
-}
 
 function startGame() {
     let userName = prompt('What is your name?');
