@@ -1,1 +1,25 @@
+.text-over-image {
+  position: relative; /* Allows positioning the text inside the div */
+  background-image: url('your-image-url.jpg'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire div */
+  color: white; /* Text color */
+  font-size: 24px; /* Text size */
+  width: 300px; /* Adjust based on your needs */
+  height: 200px; /* Adjust based on your needs */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
 
+/* If you want the image itself to be transparent, you'd typically use a PNG with transparency or apply a pseudo-element with opacity */
+.text-over-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  opacity: 0.5; /* Adjust transparency; closer to 0 is more transparent */
+  z-index: -1;
+}
